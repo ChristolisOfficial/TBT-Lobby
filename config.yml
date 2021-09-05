@@ -1,0 +1,5 @@
+portals:
+  1v1:
+    cmd: "/tbt join 1v1"
+    la: "-3 48 -55"
+    lb: "3 54 -55"
