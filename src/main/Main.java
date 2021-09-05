@@ -97,7 +97,7 @@ public class Main extends JavaPlugin implements Listener {
      * @param str The input location.
      * @param rot Should be set to true if head rotation fields are to be written.
      */
-    public Location parseLocation(String str, boolean rot) {
+    public static Location parseLocation(String str, boolean rot) {
         String[] locRaw = str.split(" ", 5);
         double[] locCoords = new double[5];
 

@@ -34,7 +34,7 @@ public class MoveListener implements Listener {
      * @return Will return true if point P is between the cube
      *  defined by the coordinates A and B.
      */
-    private boolean AABB(Location p, Location a, Location b) {
+    private static boolean AABB(Location p, Location a, Location b) {
         // Location A
         double locAX = (a.getX() >= b.getX()) ? b.getX() : a.getX();
         double locAY = (a.getY() >= b.getY()) ? b.getY() : a.getY();
