@@ -9,15 +9,13 @@ configurations {
 }
 
 repositories {
-	maven { url = 'https://oss.sonatype.org/content/repositories/central' }
-
     jcenter()
 	mavenLocal()
 	mavenCentral()
 }
 
 dependencies {
-	compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+	compile files ('lib/spigot.jar')
 }
 
 sourceSets {
