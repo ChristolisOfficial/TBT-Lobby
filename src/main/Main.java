@@ -24,10 +24,12 @@ public class Main extends JavaPlugin implements Listener {
     public static FileConfiguration config;
     public static Main instance;
     public static List<TeleportPortal> portals = new ArrayList<>();
+    public static Location spawnpoint;
 
     private final Set<Listener> listeners = new HashSet<>();
     {
         listeners.add(new MoveListener());
+        listeners.add(new JoinListener());
     }
     
     /**
@@ -54,13 +56,16 @@ public class Main extends JavaPlugin implements Listener {
         this.saveDefaultConfig();
         config = this.getConfig();
 
+        // Read portals
         try {
             ConfigurationSection portals = config.getConfigurationSection("portals");
             if (portals != null) { 
                 for (String it : portals.getKeys(false)) {
                     String cmd = config.getString("portals." + it + ".cmd");
-                    Location locA = parseLocation("portals." + it + ".la", false);
-                    Location locB = parseLocation("portals." + it + ".lb", false);
+                    Location locA = parseLocation(
+                            config.getString("portals." + it + ".la"), false);
+                    Location locB = parseLocation(
+                            config.getString("portals." + it + ".lb"), false);
 
                     Main.portals.add(new TeleportPortal(cmd, locA, locB));
                 }
@@ -71,6 +76,15 @@ public class Main extends JavaPlugin implements Listener {
             instance.getLogger().log(Level.SEVERE, e.getMessage());
             portals.clear();
         }
+
+        // Read spawnpoint
+        try {
+            Main.spawnpoint = parseLocation(config.getString("spawnpoint"), true)
+                .add(0.5D, 0D, 0.5D);
+        } catch (Exception e) {
+            instance.getLogger().log(Level.SEVERE, "Failed to read spawnpoint!");
+        }
+
 
         instance.getLogger().log(Level.INFO, "Config initialized! (" +
                 Main.portals.size() + " portals)");
