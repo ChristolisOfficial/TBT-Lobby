@@ -30,6 +30,10 @@ public class Main extends JavaPlugin implements Listener {
     {
         listeners.add(new MoveListener());
         listeners.add(new JoinListener());
+        listeners.add(new LeaveListener());
+        listeners.add(new DamageListener());
+        listeners.add(new HungerListener());
+        listeners.add(new InteractListener());
     }
     
     /**

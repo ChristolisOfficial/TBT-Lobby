@@ -15,6 +15,9 @@ public class MoveListener implements Listener {
         Player player = event.getPlayer();
         Location locP = player.getLocation();
 
+        if (locP.getY() < -10 && Main.spawnpoint != null)
+            player.teleport(Main.spawnpoint);
+
         Main.portals.forEach(portal -> {
             Location locA = portal.getLocationA();
             Location locB = portal.getLocationB();

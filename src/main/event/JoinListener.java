@@ -23,5 +23,7 @@ public class JoinListener implements Listener {
         player.setHealth(20D);
         player.setFoodLevel(20);
         player.getInventory().setHeldItemSlot(0);
+
+        event.setJoinMessage(null);
     }
 }
