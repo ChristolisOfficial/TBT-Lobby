@@ -34,6 +34,7 @@ public class Main extends JavaPlugin implements Listener {
         listeners.add(new DamageListener());
         listeners.add(new HungerListener());
         listeners.add(new InteractListener());
+        listeners.add(new ItemDropListener());
     }
     
     /**

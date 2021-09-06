@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-public class ItemDropEvent implements Listener {
+public class ItemDropListener implements Listener {
 
     @EventHandler
     public void onItemDrop(PlayerDropItemEvent event) {
