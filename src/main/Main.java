@@ -10,6 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -35,6 +36,7 @@ public class Main extends JavaPlugin implements Listener {
         listeners.add(new HungerListener());
         listeners.add(new InteractListener());
         listeners.add(new ItemDropListener());
+        listeners.add(new ChangeWorldListener());
     }
     
     /**
@@ -118,5 +120,9 @@ public class Main extends JavaPlugin implements Listener {
             return new Location(Bukkit.getWorld("lobby"),
                     locCoords[0], locCoords[1], locCoords[2]);
         }
+    }
+
+    public static boolean isPlayerInLobby(Player player) {
+        return player.getWorld().getName().equals("lobby");
     }
 }
