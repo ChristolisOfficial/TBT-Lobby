@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -124,5 +125,16 @@ public class Main extends JavaPlugin implements Listener {
 
     public static boolean isPlayerInLobby(Player player) {
         return player.getWorld().getName().equals("lobby");
+    }
+
+    public static void spawnPlayer(Player player) {
+        if (Main.spawnpoint != null)
+            player.teleport(Main.spawnpoint);
+
+        player.setGameMode(GameMode.ADVENTURE);
+        player.getInventory().clear();
+        player.setHealth(20D);
+        player.setFoodLevel(20);
+        player.getInventory().setHeldItemSlot(0);
     }
 }

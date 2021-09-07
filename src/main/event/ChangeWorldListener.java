@@ -14,7 +14,7 @@ public class ChangeWorldListener implements Listener {
         Player player = event.getPlayer();
 
         if (Main.isPlayerInLobby(player)) {
-            player.teleport(Main.spawnpoint);
+            Main.spawnPlayer(player);
         }
     }
 }
