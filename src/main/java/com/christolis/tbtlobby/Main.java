@@ -1,4 +1,4 @@
-package main;
+package com.christolis.tbtlobby;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,8 +15,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import main.event.*;
-import main.misc.TeleportPortal;
+import com.christolis.tbtlobby.event.*;
+import com.christolis.tbtlobby.misc.TeleportPortal;
 
 /**
  * Main.java
@@ -55,6 +55,7 @@ public class Main extends JavaPlugin implements Listener {
         if (config == null) {
             initConfig();
         }
+
     }
 
     /**

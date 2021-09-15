@@ -1,12 +1,12 @@
-package main.event;
+package com.christolis.tbtlobby.event;
+
+import com.christolis.tbtlobby.Main;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
-
-import main.Main;
 
 public class MoveListener implements Listener {
 

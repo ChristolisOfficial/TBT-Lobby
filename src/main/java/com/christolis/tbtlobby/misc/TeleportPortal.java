@@ -1,4 +1,4 @@
-package main.misc;
+package com.christolis.tbtlobby.misc;
 
 import org.bukkit.Location;
 

@@ -1,4 +1,4 @@
-package main.event;
+package com.christolis.tbtlobby.event;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

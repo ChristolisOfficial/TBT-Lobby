@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
+
 compileJava {
 	sourceCompatibility = '1.8'
 	targetCompatibility = '1.8'
@@ -9,27 +12,19 @@ configurations {
 }
 
 repositories {
-    jcenter()
 	mavenLocal()
 	mavenCentral()
+
+    maven {url "https://jitpack.io"}
 }
 
 dependencies {
-	compile files ('lib/spigot.jar')
-}
-
-sourceSets {
-	main {
-		java {
-			srcDirs = ["./src"]
-		}
-	}
+	implementation files('lib/spigot.jar')
+    implementation files('lib/labymod-1.0.jar')
 }
 
 jar {
 	from {
 		configurations.extraLibs.collect {it.isDirectory() ? it : zipTree(it)}
 	}
-	from 'plugin.yml'
-    from 'config.yml'
 }
